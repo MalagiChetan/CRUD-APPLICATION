@@ -111,38 +111,38 @@ function AddDetails() {
         })
     }
 
-  return <div class='container'>
-        <form class="row g-2 form" onSubmit={(event)=>{handleSubmit(event)}}>
-            <div class="form-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Employee Details</h5>
+  return <div className='container'>
+        <form className="row g-2 form" onSubmit={(event)=>{handleSubmit(event)}}>
+            <div className="form-header">
+                <h5 className="modal-title" id="exampleModalLabel">Add Employee Details</h5>
             </div>
-            <div class="form-div">
-                <label class="form-label">Full Name</label>
-                <input type="text" class="form-control" placeholder='Enter full name' onChange={(e)=>{handleData(e)}} value={employeeDetails.fullName} name='fullName'/>
-                {nameError ? <div class="error-message">{nameErrorMessage}</div> : null}
+            <div className="form-div">
+                <label className="form-label">Full Name</label>
+                <input type="text" className="form-control" placeholder='Enter full name' onChange={(e)=>{handleData(e)}} value={employeeDetails.fullName} name='fullName'/>
+                {nameError ? <div className="error-message">{nameErrorMessage}</div> : null}
             </div>
 
-            <div class="">
-                <label class="form-label">Designation</label>
-                <input type="text" class="form-control" placeholder='Enter designation' onChange={(e)=>{handleData(e)}} value={employeeDetails.designation} name='designation'/>
-                {designationError ? <span class="error-message">Please choose a designation.</span> : null }
+            <div className="">
+                <label className="form-label">Designation</label>
+                <input type="text" className="form-control" placeholder='Enter designation' onChange={(e)=>{handleData(e)}} value={employeeDetails.designation} name='designation'/>
+                {designationError ? <span className="error-message">Please choose a designation.</span> : null }
                 
             </div>
 
-            <div class="">
-                <label class="form-label">Salary</label>
-                <input type="number" class="form-control" placeholder='salary per year' onChange={(e)=>{handleData(e)}} value={employeeDetails.salary} name='salary'/>
-                {salaryError ? <span class="error-message">{salaryErrorMessage}</span> : null }
+            <div className="">
+                <label className="form-label">Salary</label>
+                <input type="number" className="form-control" placeholder='salary per year' onChange={(e)=>{handleData(e)}} value={employeeDetails.salary} name='salary'/>
+                {salaryError ? <span className="error-message">{salaryErrorMessage}</span> : null }
             </div>
 
-            <div class="">
-                <label class="form-label">Age</label>
-                <input type="number" class="form-control" placeholder='Enter age' onChange={(e)=>{handleData(e)}} value={employeeDetails.age} name='age'/>
-                {ageError ? <span class="error-message">{ageErrorMessage}</span> : null }
+            <div className="">
+                <label className="form-label">Age</label>
+                <input type="number" className="form-control" placeholder='Enter age' onChange={(e)=>{handleData(e)}} value={employeeDetails.age} name='age'/>
+                {ageError ? <span className="error-message">{ageErrorMessage}</span> : null }
             </div>
 
-            <div class="button">
-                <button class="btn btn-primary" type="submit">Submit</button>
+            <div className="button">
+                <button className="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
   </div>;
