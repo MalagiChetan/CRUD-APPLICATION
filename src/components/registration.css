@@ -1,27 +1,6 @@
-.App {
-  text-align: center;
+body{
+    background-color: rgb(51, 92, 226);
 }
-.main{
-  border: 2px solid black;
-  background-color: rgb(78, 78, 236);
-  margin-top: 100px;
-  margin-right: 450px;
-  margin-left: 450px;
-}
-.sub_main{
-  background-color: rgb(241, 230, 230);
-  border-radius: 5px;
-  margin-right: 125px;
-  margin-left: 125px;
-}
-.signup{
-  background-color: yellowgreen;
-  width: 300px;
-  border-radius: 5px;
-}
-#title{
-  color: azure;
-}
-.form-label{
-  justify-content: left;
+.fsize{
+    font-size: xx-large;
 }
