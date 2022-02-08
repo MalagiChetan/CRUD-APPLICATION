@@ -1,6 +1,6 @@
-.App {
-  text-align: center;
-}
+/* .App {
+  /* text-align: center; 
+} */
 
 .App-logo {
   height: 40vmin;
@@ -12,6 +12,13 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+.container-5{
+  margin-top: 10%;
+  background-color: blue;
+  width: 800px;
+}
+
 
 .App-header {
   background-color: #282c34;
