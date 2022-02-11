@@ -1,15 +1,18 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect, useContext } from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TableData from './TableData';
 
 function Edit(props) {
+
+  const data=useContext(TableData)
+
+  const [table,setTable] = useState(data.detailForTable)
+  const [person,setPerson] = useState (table[props.dataIndex])
     const [show, setShow] = useState(false);
-    const [form, setForm] = useState({
-        FullName: '',
-        Designation: '',
-        Salary: '',
-        Age: ''
-    });
+    
+// console.log(">>",pesron);
+    
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
@@ -17,10 +20,20 @@ function Edit(props) {
         setShow(props.showEditForm)
     }, [props.showEditForm])
     
-    useEffect(() => {
-        setForm(props.selectedDetails)
-    }, [props.selectedDetails])
+    // useEffect(() => {
+    //     setForm(props.selectedDetails)
+    // }, [props.selectedDetails])
 
+    const handleChange=(event)=>{
+     const personCopy = {...person}
+     personCopy[event.target.name] = event.traget.value
+     setPerson(personCopy)
+    }
+    const handleSubmit=()=>{
+      const tableCopy=[...table]
+      tableCopy[props.dataIndex]=person
+      props.setdetailForTable(tableCopy)
+    }
    
   return <div> 
       <>
@@ -41,24 +54,23 @@ function Edit(props) {
                 <div className="form-row ">
                   <div className="form-group col-md-13">
                     <label htmlFor="inputEmail4">Full Name</label>
-                    <input type="text" className="form-control"  name='fullname' />
+                    <input type="text" className="form-control"  name='fullname' value={person.fullname} onChange={(event)=>{handleChange(event)}} />
                   </div>
                   <div className="form-group col-md-13">
                     <label htmlFor="inputPassword4">Designation</label>
-                    <input type="text" className="form-control" name='designation' />
+                    <input type="text" className="form-control" name='designation' value={person.designation} onChange={(event)=>{handleChange(event)}}/>
                   </div>
                 </div>
-
 
                 <div className="form-row">
 
                   <div className="form-group col-md-13">
                     <label htmlFor="inputZip">Salary</label>
-                    <input type="number" className="form-control" name='salary' />
+                    <input type="number" className="form-control" name='salary' value={person.salary} onChange={(event)=>{handleChange(event)}} />
                   </div>
                   <div className="form-group col-md-13">
                     <label htmlFor="inputZip">Age</label>
-                    <input type="number" className="form-control" name='age' />
+                    <input type="number" className="form-control" name='age' value={person.age} onChange={(event)=>{handleChange(event)}} />
                   </div>
                 </div>
 
@@ -69,8 +81,8 @@ function Edit(props) {
         
         </Modal.Body>
           <Modal.Footer>
-            <Button variant="primary" onClick={handleClose}>
-              Submit
+            <Button variant="primary" onClick={handleSubmit}>
+              UPDATE
             </Button>
             {/* <Button variant="primary" onClick={editForm}>
                         {props.modalType === 'edit' ? 'Update Changes' : 'Add'}

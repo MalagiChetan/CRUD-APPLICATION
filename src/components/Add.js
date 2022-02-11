@@ -7,6 +7,8 @@ function Add(props) {
   const appTableDetail = useContext(TableData)
   const copyOfdetailForTable = appTableDetail.detailForTable
   const copyOfsetdetailForTable = appTableDetail.setdetailForTable
+  // const copyOfsetdetailForTable = appTableDetail.setdetailForTable
+
   
 
 // console.log(copyOfdetailForTable);
@@ -17,11 +19,13 @@ function Add(props) {
     salary: '',
     age: ''
   });
-  const addData = (event) => {
 
+  const data = {...addDetails}
+  const addData = (event) => {
     const copyaddDetails = { ...addDetails }
     copyaddDetails[event.target.name] = event.target.value
     setaddDetails(copyaddDetails)
+    localStorage.setItem('get',JSON.stringify(data))
   }
 
   const getAddDetails = (e) => {

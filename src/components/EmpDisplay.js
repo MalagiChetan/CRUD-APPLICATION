@@ -43,7 +43,7 @@ function EmpDisplay() {
             <td>{data.designation}</td>
             <td>{data.salary}</td>
             <td>{data.age}</td>
-            <td><Edit/></td>
+            <td><Edit dataIndex={index} dataValue={data}/></td>
             <td><button className='btn btn-danger' onClick={() => { deleteData(index) }}>Delete</button></td>
           </tr>
         })}

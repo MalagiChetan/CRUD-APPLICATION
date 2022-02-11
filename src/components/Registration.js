@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './Registration.css';
+import './registration.css';
 // import './'
 ;
 
